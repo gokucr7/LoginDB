@@ -1,36 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Clases;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import javax.swing.JOptionPane;
+
 
 public class Cconexion {
-    Connection conectar;
-    
-    String usuario="root";
-    String contrasenia="12345678";
-    String bd="login";
-    String ip="localhost";
-    String puerto="3306";
-    
-    String cadena = "jdbc:mysql://"+ip+":"+puerto+"/"+bd;
-    
-    public Connection estableceConexion(){
-    
+    private static final String URL = "jdbc:mysql://localhost:3306/login";
+    private static final String USER = "root";
+    private static final String PASSWORD = "12345678";
+
+    public static Connection estableceConexion() {
+        Connection con = null;
         try {
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            conectar = DriverManager.getConnection(cadena,usuario,contrasenia);
-            JOptionPane.showMessageDialog(null,"Se conectó correcta a la Base de DATOS");
-            
+            con = DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Problemas en la conexion"+ e.toString());
+            System.err.println("Error al establecer la conexión: " + e.getMessage());
         }
-        return conectar;
+        return con;
     }
     
        
