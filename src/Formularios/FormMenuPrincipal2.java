@@ -2,10 +2,10 @@
 package Formularios;
 
 
-public class FormMenuPrincipal extends javax.swing.JFrame {
+public class FormMenuPrincipal2 extends javax.swing.JFrame {
 
    
-    public FormMenuPrincipal() {
+    public FormMenuPrincipal2() {
        
         initComponents();
         this.setLocationRelativeTo(null);
@@ -23,7 +23,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButtonCerrar = new javax.swing.JButton();
         jButtonIngresar = new javax.swing.JButton();
-        jButtonMostrar = new javax.swing.JButton();
         jButtonEstadistica = new javax.swing.JButton();
         jButtonSalir = new javax.swing.JButton();
         jLabelNombrep = new javax.swing.JLabel();
@@ -59,17 +58,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 190, 130, 30));
 
-        jButtonMostrar.setBackground(new java.awt.Color(0, 0, 0));
-        jButtonMostrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButtonMostrar.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonMostrar.setText("USUARIOS");
-        jButtonMostrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMostrarActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButtonMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 130, 30));
-
         jButtonEstadistica.setBackground(new java.awt.Color(0, 0, 0));
         jButtonEstadistica.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButtonEstadistica.setForeground(new java.awt.Color(255, 255, 255));
@@ -79,7 +67,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
                 jButtonEstadisticaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonEstadistica, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 130, 30));
+        getContentPane().add(jButtonEstadistica, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 130, 30));
 
         jButtonSalir.setBackground(new java.awt.Color(0, 0, 0));
         jButtonSalir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -128,13 +116,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonEstadisticaActionPerformed
 
-    private void jButtonMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarActionPerformed
-        FormUsuarios a = new FormUsuarios();
-        a.setVisible(true);
-        this.setVisible(false);
-        
-    }//GEN-LAST:event_jButtonMostrarActionPerformed
-
     private void jButtonIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresarActionPerformed
         FormAlumno a = new FormAlumno();
         a.setVisible(true);
@@ -150,7 +131,7 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormMenuPrincipal().setVisible(true);
+                new FormMenuPrincipal2().setVisible(true);
             }
         });
     }
@@ -161,7 +142,6 @@ public class FormMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonCerrar;
     private javax.swing.JButton jButtonEstadistica;
     private javax.swing.JButton jButtonIngresar;
-    public static javax.swing.JButton jButtonMostrar;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JLabel jLabelFondo;
     private javax.swing.JLabel jLabelIcono;
