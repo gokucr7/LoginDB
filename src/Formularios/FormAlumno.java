@@ -3,7 +3,9 @@ package Formularios;
 
 import Clases.CAlumnos;
 import Clases.CLogin;
+import java.awt.Desktop;
 import java.awt.HeadlessException;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import javax.swing.JOptionPane;
@@ -406,7 +408,7 @@ public class FormAlumno extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombres;
     // End of variables declaration//GEN-END:variables
     
-    private void generarInformeExcel() {
+   private void generarInformeExcel() {
     try {
         // Crea un nuevo libro de Excel
         XSSFWorkbook workbook = new XSSFWorkbook();
@@ -443,15 +445,23 @@ public class FormAlumno extends javax.swing.JFrame {
         }
         
         // Guarda el archivo en disco
-        try (FileOutputStream fileOut = new FileOutputStream("InformeAlumnos.xlsx")) {
+        String informeFilePath = "InformeAlumnos.xlsx";
+        try (FileOutputStream fileOut = new FileOutputStream(informeFilePath)) {
             workbook.write(fileOut);
         }
         
-        JOptionPane.showMessageDialog(null, "Informe generado con éxito.");
+        // Abre el archivo con la aplicación predeterminada para archivos Excel
+        File informeFile = new File(informeFilePath);
+        if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.OPEN)) {
+            Desktop.getDesktop().open(informeFile);
+        } else {
+            JOptionPane.showMessageDialog(null, "Informe generado con éxito, pero no se pudo abrir automáticamente.");
+        }
+        
+        JOptionPane.showMessageDialog(null, "Informe generado y abierto con éxito.");
         
     } catch (HeadlessException | IOException e) {
         JOptionPane.showMessageDialog(null, "Error al generar el informe: " + e.getMessage());
     }
 }
-
 }

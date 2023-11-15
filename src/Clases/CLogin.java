@@ -1,7 +1,7 @@
-
 package Clases;
 
 
+import Formularios.FormLogin;
 import Formularios.FormMenuPrincipal;
 import Formularios.FormMenuPrincipal2;
 import java.awt.HeadlessException;
@@ -40,10 +40,14 @@ public class CLogin {
 
             if ("administrador".equals(tipoUsuario)) {
                 // Redirect to FormMenuPrincipal (for administrators)
+                FormLogin form = new FormLogin();
+                form.dispose();
                 FormMenuPrincipal objetoMenu = new FormMenuPrincipal();
                 objetoMenu.setVisible(true);
             } else if ("maestro".equals(tipoUsuario)) {
                 // Redirect to FormMenuPrincipal2 (for teachers)
+                FormLogin form = new FormLogin();
+                form.dispose();
                 FormMenuPrincipal2 objetoMenu2 = new FormMenuPrincipal2();
                 objetoMenu2.setVisible(true);
             } else {

@@ -200,7 +200,7 @@ public class CAlumnos {
             setCodigo(Integer.parseInt(paramCodigo.getText()));
             
             
-            String consulta = "DELETE from alumnos WHERE id = ?;";
+            String consulta = "DELETE from Alumnos WHERE id = ?;";
             try {
                 CallableStatement cs  = Cconexion.estableceConexion().prepareCall(consulta);
                 
@@ -332,7 +332,7 @@ public class CAlumnos {
         try {
             conexion = Cconexion.estableceConexion(); // Establece la conexión usando la clase Cconexion.
 
-            String consulta = "SELECT promedio FROM alumnos WHERE carrera = 'Ingeniería de Sistemas'";
+            String consulta = "SELECT promedio FROM Alumnos WHERE carrera = 'Ingeniería de Sistemas'";
             try (PreparedStatement statement = conexion.prepareStatement(consulta);
                  ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
@@ -360,7 +360,7 @@ public class CAlumnos {
         try {
             conexion = Cconexion.estableceConexion(); // Establece la conexión usando la clase Cconexion.
 
-            String consulta = "SELECT promedio FROM alumnos WHERE carrera = 'Ingeniería electronica'";
+            String consulta = "SELECT promedio FROM Alumnos WHERE carrera = 'Ingeniería electronica'";
             try (PreparedStatement statement = conexion.prepareStatement(consulta);
                  ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
@@ -388,7 +388,7 @@ public class CAlumnos {
         try {
             conexion = Cconexion.estableceConexion(); // Establece la conexión usando la clase Cconexion.
 
-            String consulta = "SELECT promedio FROM alumnos WHERE carrera = 'Administracion de empresas'";
+            String consulta = "SELECT promedio FROM Alumnos WHERE carrera = 'Administracion de empresas'";
             try (PreparedStatement statement = conexion.prepareStatement(consulta);
                  ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
